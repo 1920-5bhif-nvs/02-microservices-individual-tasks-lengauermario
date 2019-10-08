@@ -1,5 +1,6 @@
 package at.htl.cinema.boundary
 
+import io.quarkus.test.common.QuarkusTestResource
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
 import org.hamcrest.CoreMatchers.`is`
@@ -9,12 +10,14 @@ import org.junit.jupiter.api.Test
 open class CinemaResourceTest {
 
     @Test
-    fun testHelloEndpoint() {
+    fun testCinemaEndpoint() {
+        given().`when`().post("/cinema/initialize")
+
         given()
-          .`when`().get("/C:/Program Files/Git/cinema")
+          .`when`().get("/cinema")
           .then()
              .statusCode(200)
-             .body(`is`("hello"))
+             .body( "size()", `is`(2))
     }
 
 }

@@ -1,20 +1,24 @@
 package at.htl.hall.entity
 
 import at.htl.cinema.entity.Cinema
+import com.fasterxml.jackson.annotation.JsonIgnore
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+import com.fasterxml.jackson.annotation.JsonManagedReference
 import javax.persistence.*
+import javax.xml.bind.annotation.XmlTransient
 
 @Entity
 @NamedQuery(name = "hall.findAll", query = "select h from Hall h")
-open class Hall {
+data class Hall(
+        var name: String = "",
+        var seating: Int? = null
+) {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null
 
-    open lateinit var name: String
-    open var seating: Int? = null
-
-/*    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne //(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "cinema_id")
-    var cinema: Cinema? = null*/
+    lateinit var cinema: Cinema
 }

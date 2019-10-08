@@ -67,7 +67,17 @@ open class CinemaResource {
         )
         cinemas.forEach { cinemaDao.add(it) }
 
-      /*  var halls = arrayOf(
+/*
+        var halls = arrayOf(
+                Hall().apply{ name="DOLBY CINEMA"; seating=394;},
+                Hall().apply{ name="Saal 2"; seating=133;},
+                Hall().apply{ name="Saal 3"; seating=132;},
+                Hall().apply{ name="Saal 1"; seating=247;},
+                Hall().apply{ name="Saal 2"; seating=247;},
+                Hall().apply{ name="Saal 3"; seating=184;}
+        )
+*/
+       var halls = arrayOf(
                 Hall().apply{ name="DOLBY CINEMA"; seating=394; cinema = cinemas[0]},
                 Hall().apply{ name="Saal 2"; seating=133; cinema = cinemas[0]},
                 Hall().apply{ name="Saal 3"; seating=132; cinema = cinemas[0]},
@@ -75,7 +85,7 @@ open class CinemaResource {
                 Hall().apply{ name="Saal 2"; seating=247; cinema = cinemas[0]},
                 Hall().apply{ name="Saal 3"; seating=184; cinema = cinemas[0]}
         )
-        halls.forEach{hallDao.add(it)}*/
+        halls.forEach{hallDao.add(it)}
 
         return Response.ok("${cinemas.size} Cinemas and Halls are added.").build()
     }

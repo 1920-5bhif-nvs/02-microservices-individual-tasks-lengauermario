@@ -1,20 +1,24 @@
 package at.htl.cinema.entity
 
 import at.htl.hall.entity.Hall
+import com.fasterxml.jackson.annotation.JsonBackReference
+import com.fasterxml.jackson.annotation.JsonIgnore
 import javax.persistence.*
+import javax.xml.bind.annotation.XmlTransient
 
 
 @Entity
 @NamedQuery(name = "cinema.findAll", query = "select c from Cinema c")
-open class Cinema {
+data class Cinema (
+        var name: String = "",
+        var address:String = ""
+) {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     var id: Long? = null
 
-    open lateinit var name: String
-    open lateinit var address:String
 
-  /*  @OneToMany(cascade = [(CascadeType.ALL)], fetch = FetchType.LAZY, mappedBy = "halls")
-    private val halls = mutableListOf<Hall>()*/
+    /*@OneToMany(cascade = [(CascadeType.ALL)], fetch = FetchType.LAZY, mappedBy = "cinema")
+    val halls = mutableListOf<Hall>()*/
 }
