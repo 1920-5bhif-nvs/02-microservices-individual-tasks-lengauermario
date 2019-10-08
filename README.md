@@ -1,6 +1,6 @@
 # 02-microservices-individual-tasks-lengauermario
 
-## starter Project RestService
+## Project RestService
 ```
 mvn io.quarkus:quarkus-maven-plugin:0.23.2:create \
     -DprojectGroupId=at.htl \
@@ -9,7 +9,7 @@ mvn io.quarkus:quarkus-maven-plugin:0.23.2:create \
     -Dpath="/cinema" \
     -Dextensions="kotlin,resteasy-jsonb"
 ```
-## starter Project Microservice
+## Project Microservice
 ```
 mvn io.quarkus:quarkus-maven-plugin:0.23.2:create \
     -DprojectGroupId=at.htl \
