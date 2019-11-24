@@ -2,7 +2,7 @@
 :source-highlighter: coderay
 
 == Übersicht
-Cinema ist ein Microservice der die Restschnittstelle von Übung 1 nutzt. Er beinhaltet Funktionen wie Metrics und Health und Faulth Tolerance.
+Das ist ein Microservice der die Restschnittstelle von Übung 1 nutzt. Er beinhaltet Funktionen wie Metrics und Health und Faulth Tolerance.
 
 == Starten
 === 1. Microservice von Übung 1 starten
