@@ -1,0 +1,33 @@
+= Microservice  Mario Lengauer
+:source-highlighter: coderay
+
+== Übersicht
+Cinema ist ein Microservice der die Restschnittstelle von Übung 1 nutzt. Er beinhaltet Funktionen wie Metrics und Health und Faulth Tolerance.
+
+== Starten
+=== 1. Microservice von Übung 1 starten
+Hierfür folgen Sie den Anweisung hier:
+link:https://github.com/1920-5bhif-nvs/01-assignment-quarkus-jpa-lengauermario#quarkus-starten[]
+
+=== 2. Microservice mit Health, etc starten
+im Dev Mode: `mvnw compile quarkus:dev`
+
+== Usage
+
+=== Metrics
+Erreichbar unter `http://localhost:8181/metrics`
+
+* `@Counted(name = "performedChecks", description = "How many rest requests have been performed.")`
+    Dies zählt wie oft die Methode aufgerufen wurde.
+* `@Timed(name = "checksTimer", description = "A measure of how long it takes to perform the rest request", unit = MetricUnits.MILLISECONDS)`
+    Dies beschreibt wie lang eine Aufruf gedauert hat.
+
+=== Health
+Erreichbar unter: `http://localhost:8181/health`
+
+== Research
+=== Prometheus
+Dies ist ein Tool um die Metrics Daten zu visualisieren.
+
+=== Istio
+Dies ist ein Tool um Microservice-Traffic zu managen. Auserdem bietet es eine Möglichkeit um die Network-Usage anzuzeigen.
